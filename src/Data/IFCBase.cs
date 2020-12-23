@@ -47,14 +47,21 @@ namespace IFCLite.Data
             Regex p21idPattern = new Regex(@"^#[0-9]*[0-9]$");
             if (p21idPattern.IsMatch(value))
                 return value;
-            Regex numberPattern = new Regex(@"^[0-9][0-9]*.$");
+            Regex numberPattern = new Regex(@"^[-]*[0-9]*.[0-9]*$");
             if (numberPattern.IsMatch(value))
                 return value;
-            Regex enumPattern = new Regex(@"^.[a-zA-Z]*[.]$");
+            Regex earthNumberPattern = new Regex(@"^[-]*[0-9]*.[0-9]*E[+-]*[0-9]*[0-9]$");
+            if (earthNumberPattern.IsMatch(value))
+                return value;
+            Regex enumPattern = new Regex(@"^.[\S]*[.]$");
             if (enumPattern.IsMatch(value))
                 return value;
-
-            return $"'{ConvertToIFCString(value)}'";
+            Regex ifcObjPattern = new Regex(@"^IFC[A-Z]*\([\S\s]*\)$");
+            if (ifcObjPattern.IsMatch(value))
+                return value;
+            if (value == "")
+                return "''";
+            return (value[0] == '\'' && value[value.Length - 1] == '\'') ? ConvertToIFCString(value) : $"'{ConvertToIFCString(value)}'";
         }
         protected bool IsChinese(string _String)
         {
@@ -108,8 +115,9 @@ namespace IFCLite.Data
 
             //內容至少有一個的陣列
             string res = $"({GetIFCValueString(array[0].AsString)}";
-            for (int i = 1; i < array.Count - 1; i++)
-                res += $",{GetIFCValueString(array[1].AsString)})";
+            for (int i = 1; i < array.Count; i++)
+                res += $",{GetIFCValueString(array[i].AsString)}";
+            res += ")";
             return res;
         }
         public virtual string ToIFCString()

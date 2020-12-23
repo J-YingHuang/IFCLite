@@ -31,14 +31,16 @@ namespace IFCLite
         private void AddDataToDatabase(string ifcpath)
         {
             IFCReader reader = new IFCReader(ifcpath, SchemaReader);
-            foreach (IFCObject obj in reader.InsertObjs)
-                IFCDatabase.IFCModel.Insert(obj.ToBson());
-            foreach (IFCHeader header in reader.Header)
-                IFCDatabase.IFCHead.Insert(header.ToBson());
-            foreach (IFCReplaceRecord record in reader.ReplaceTable)
-                IFCDatabase.ReplaceTable.Insert(record);
-            foreach (IFCInverseRecord inverse in reader.InverseTable)
-                IFCDatabase.InverseTable.Insert(inverse);
+
+            IFCDatabase.IFCModel.Insert(GetObjects(reader.InsertObjs.ToList<IFCBase>()));
+            IFCDatabase.IFCHead.Insert(GetObjects(reader.Header.ToList<IFCBase>()));
+            IFCDatabase.ReplaceTable.Insert(reader.ReplaceTable);
+            IFCDatabase.InverseTable.Insert(reader.InverseTable);
+        }
+        private IEnumerable<BsonDocument> GetObjects(List<IFCBase> objs)
+        {
+            foreach (IFCBase data in objs)
+                yield return data.ToBson();
         }
         public void Export(string folderPath, string fileName)
         {

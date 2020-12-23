@@ -16,7 +16,7 @@ namespace IFCLite.Data
             List<BsonValue> values = GetValues();
             res += $"{ValueToIFC(values[0])}";
 
-            for (int i = 1; i < values.Count - 1; i++)
+            for (int i = 1; i < values.Count; i++)
                 res += $",{ValueToIFC(values[i])}";
             res += ");";
             return res;

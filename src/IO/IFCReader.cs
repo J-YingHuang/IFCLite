@@ -74,7 +74,7 @@ namespace IFCLite.IO
                     else
                     {
                         BsonArray arr = new BsonArray();
-                        foreach (string splitVal in SplitProperty(prop[0].Substring(1,prop[0].Count() -2)))
+                        foreach (string splitVal in SplitProperty(cutString(prop[0])))
                             arr.Add(splitVal);
                         file_des.Add("description", arr);
                     }
@@ -96,13 +96,18 @@ namespace IFCLite.IO
                     };
                     for (int i = 0; i < prop.Count(); i++)
                     {
+                        if (prop[i] == "")
+                        {
+                            file_name.Add(itemName[i], "");
+                            continue;
+                        }
                         if (prop[i].Substring(0, 1) != "(")
                         {
                             file_name.Add(itemName[i], prop[i]);
                             continue;
                         }
                         BsonArray arr = new BsonArray();
-                        foreach (string splitVal in SplitProperty(prop[i].Substring(1, prop[0].Count() - 2)))
+                        foreach (string splitVal in SplitProperty(cutString(prop[i])))
                             arr.Add(splitVal);
                         file_name.Add(itemName[i], arr);
                     }
@@ -116,7 +121,7 @@ namespace IFCLite.IO
                     {
                         { "EntityName", "FILE_SCHEMA" }
                     };
-                    string schemaType = SplitProperty(ifcContent.Substring(1, ifcContent.Count() - 2))[0];
+                    string schemaType = SplitProperty(cutString(ifcContent))[0];
                     file_schema.Add("schema_identifiers", schemaType);
                     Header.Add(new IFCHeader(file_schema));
                     ResultMessage += "使用" + schemaType + Environment.NewLine;
@@ -129,26 +134,35 @@ namespace IFCLite.IO
         private Dictionary<string, IFCObject> CombineIFC(List<IFCData> allIFCRow)
         {
             Dictionary<string, IFCObject> objDist = new Dictionary<string, IFCObject>();
-            foreach (IFCData data in FilerReplaceData(allIFCRow))
+            //foreach (IFCData data in FilerReplaceData(allIFCRow))
+            foreach(IFCData data in allIFCRow)
             {
                 try
                 {
-                    BsonDocument obj = new BsonDocument();
-                    obj.Add("P21Id", data.P21Id);
-                    obj.Add("EntityName", data.EntityName);
+                    BsonDocument obj = new BsonDocument
+                    {
+                        { "P21Id", data.P21Id },
+                        { "EntityName", data.EntityName }
+                    };
                     //Get Schema
                     List<string> schemaList = SchemaReader.GetAttributesList(data.EntityName);
                     //處理IFC原始字串編碼轉換, 並排除字串中有逗號的錯誤
                     List<string> contentSplit = SplitProperty(CutStringWithComma(ConvertUnicodeStringToChinese(data.Properties)));
+
                     for (int i = 0; i < contentSplit.Count; i++)
                     {
+                        if (contentSplit[i] == "") //空字串
+                        {
+                            obj.Add(schemaList[i], "");
+                            continue;
+                        }
                         if (contentSplit[i].Substring(0, 1) != "(") //非陣列可直接儲存
                         {
                             obj.Add(schemaList[i], contentSplit[i]);
                             continue;
                         }
                         BsonArray arr = new BsonArray();
-                        foreach (string val in SplitProperty(CutStringWithComma(contentSplit[i].Substring(1, contentSplit[i].Count() - 2))))
+                        foreach (string val in SplitProperty(CutStringWithComma(cutString(contentSplit[i]))))
                             arr.Add(val);
                         obj.Add(schemaList[i], arr);
                     }
@@ -271,14 +285,14 @@ namespace IFCLite.IO
             {
                 foreach (string s in commaSplit)
                 {
+                    string cutS = s.Trim();
                     if (isArrayValue || isStringValue)
-                        tmpString += "," + s.Trim();                             //把逗點補回去
+                        tmpString += "," + cutS;                             //把逗點補回去
                     else
-                        tmpString += s.Trim();
-                    if (s[0] == '(')
+                        tmpString += cutS;
+                    if (cutS[0] == '(')
                     {                                                        //ifc的值是陣列                
-
-                        if (s[s.Length - 1] == ')')                     //結尾就是')'
+                        if (cutS[cutS.Length - 1] == ')')                     //結尾就是')'
                         {
                             res.Add(tmpString.Trim());
                             tmpString = "";
@@ -287,11 +301,19 @@ namespace IFCLite.IO
                         else
                             isArrayValue = true;
                     }
-                    else if (s[0] == '\'')
+                    else if (cutS[0] == '\'')
                     {
-                        if (s[s.Length - 1] == '\'')                     //結尾就是'\''
+                        if (isArrayValue && cutS[cutS.Length - 1] == ')')
                         {
-                            res.Add(tmpString.Trim().Substring(1, tmpString.Length - 2)); //去掉前面與後面的字串示意符"'"
+                            res.Add(tmpString.Trim());
+                            tmpString = "";
+                            indexOfSchema++;
+                            isArrayValue = false;
+                            continue;
+                        }
+                        if (cutS[cutS.Length - 1] == '\'')                     //結尾就是'\''
+                        {
+                            res.Add(cutString(tmpString)); //去掉前面與後面的字串示意符"'"
                             tmpString = "";
                             indexOfSchema++;
                         }
@@ -302,7 +324,7 @@ namespace IFCLite.IO
                     {
                         if (isArrayValue && !isStringValue)
                         {
-                            if (s[s.Length - 1] == ')')                //陣列結尾         else 僅連結陣列字串(開頭就做了)
+                            if (cutS[cutS.Length - 1] == ')')                //陣列結尾         else 僅連結陣列字串(開頭就做了)
                             {
                                 isArrayValue = false;
                                 res.Add(tmpString.Trim());
@@ -312,13 +334,13 @@ namespace IFCLite.IO
                         }
                         else if (!isArrayValue && isStringValue)       //only one situation could happened   array or string
                         {
-                            if (s[s.Length - 1] == '\'')               //字串結尾         else 僅連結陣列字串(開頭就做了)
+                            if (cutS[cutS.Length - 1] == '\'')               //字串結尾         else 僅連結陣列字串(開頭就做了)
                             {
-                                if (s.Length > 2)
-                                    if (s[s.Length - 2] == '\\')        //s的長度如果小於2會出現runtime error
+                                if (cutS.Length > 2)
+                                    if (cutS[cutS.Length - 2] == '\\')        //s的長度如果小於2會出現runtime error
                                         continue;
                                 isStringValue = false;
-                                res.Add(tmpString.Trim().Substring(1, tmpString.Length - 2));
+                                res.Add(cutString(tmpString)); //去掉前面與後面的字串示意符"'"
                                 tmpString = "";
                                 indexOfSchema++;
                             }
@@ -342,7 +364,11 @@ namespace IFCLite.IO
         {
             return SplitProperty(new List<string>() { val });
         }
-
+        private string cutString(string tmp)
+        {
+            string res = tmp.Trim().Substring(1);
+            return res.Substring(0, res.Length - 1);
+        }
         #region --unicode--
         private string ConvertUnicodeStringToChinese(string _String)
         {
