@@ -16,7 +16,9 @@ namespace IFCLite
         private IFCDatabase IFCDatabase { get; set; }
         private SchemaReader SchemaReader { get; set; }
         public IFCQuery Query { get { return new IFCQuery(IFCDatabase); } }
-        
+        public IFCInsert Insert { get { return new IFCInsert(IFCDatabase); } }
+        public IFCDelete Remove { get { return new IFCDelete(IFCDatabase); } }
+        public IFCUpdate Update { get { return new IFCUpdate(IFCDatabase); } }
         public IFCLiteDrive(string dbPath, string ifcPath, IFCVersion version, bool create)
         {
             SchemaReader = new SchemaReader(version);
@@ -31,9 +33,8 @@ namespace IFCLite
         private void AddDataToDatabase(string ifcpath)
         {
             IFCReader reader = new IFCReader(ifcpath, SchemaReader);
-
-            IFCDatabase.IFCModel.Insert(GetObjects(reader.InsertObjs.ToList<IFCBase>()));
-            IFCDatabase.IFCHead.Insert(GetObjects(reader.Header.ToList<IFCBase>()));
+            Insert.IFCObjectInsert(reader.InsertObjs);
+            Insert.IFCHeadInsert(reader.Header);
             IFCDatabase.ReplaceTable.Insert(reader.ReplaceTable);
             IFCDatabase.InverseTable.Insert(reader.InverseTable);
         }

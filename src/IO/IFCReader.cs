@@ -1,12 +1,12 @@
-﻿using System;
+﻿using IFCLite.Data;
+using IFCLite.Data.Schema;
+using LiteDB;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using LiteDB;
-using IFCLite.Data;
-using IFCLite.Data.Schema;
-using System.IO;
+using System.Text.RegularExpressions;
 
 namespace IFCLite.IO
 {
@@ -29,7 +29,6 @@ namespace IFCLite.IO
             InsertObjs = dist.Values.ToList();
             FindInverseData(dist);
         }
-
         private List<IFCData> SplitIFCFile(string filepath)
         {
             List<IFCData> allIFCRow = new List<IFCData>();
@@ -45,7 +44,7 @@ namespace IFCLite.IO
             {
                 string tmp = lastString + reader.ReadLine();
                 //跳過/* */註解行
-                if (tmp == "" || (tmp.Substring(0, 2) == "/*" && tmp.Substring(tmp.Length - 2) == "*/"))
+                if (tmp == "" || (tmp.Substring(0, 2) == "/*" || tmp[0] == '*' || tmp.Substring(tmp.Length - 2) == "*/"))
                     continue;
                 if (tmp[tmp.Length - 1] != ';')
                 {
@@ -72,13 +71,8 @@ namespace IFCLite.IO
                     if (prop[0] == "()")
                         file_des.Add("description", "$");
                     else
-                    {
-                        BsonArray arr = new BsonArray();
-                        foreach (string splitVal in SplitProperty(cutString(prop[0])))
-                            arr.Add(splitVal);
-                        file_des.Add("description", arr);
-                    }
-                    file_des.Add("implementation_level", prop[1]);
+                        file_des.Add("description", GetArray(prop[0]));
+                    file_des.Add("implementation_level", GetValue(prop[1]));
                     Header.Add(new IFCHeader(file_des));
                 }
 
@@ -103,13 +97,10 @@ namespace IFCLite.IO
                         }
                         if (prop[i].Substring(0, 1) != "(")
                         {
-                            file_name.Add(itemName[i], prop[i]);
+                            file_name.Add(itemName[i], GetValue(prop[i]));
                             continue;
                         }
-                        BsonArray arr = new BsonArray();
-                        foreach (string splitVal in SplitProperty(cutString(prop[i])))
-                            arr.Add(splitVal);
-                        file_name.Add(itemName[i], arr);
+                        file_name.Add(itemName[i], GetArray(prop[i]));
                     }
                     Header.Add(new IFCHeader(file_name));
                 }
@@ -121,10 +112,9 @@ namespace IFCLite.IO
                     {
                         { "EntityName", "FILE_SCHEMA" }
                     };
-                    string schemaType = SplitProperty(cutString(ifcContent))[0];
-                    file_schema.Add("schema_identifiers", schemaType);
+                    file_schema.Add("schema_identifiers", GetArray(ifcContent));
                     Header.Add(new IFCHeader(file_schema));
-                    ResultMessage += "使用" + schemaType + Environment.NewLine;
+                    //ResultMessage += "使用" + schemaType + Environment.NewLine;
                 }
 
                 lastString = "";        //處理完畢，清空上一行
@@ -134,46 +124,57 @@ namespace IFCLite.IO
         private Dictionary<string, IFCObject> CombineIFC(List<IFCData> allIFCRow)
         {
             Dictionary<string, IFCObject> objDist = new Dictionary<string, IFCObject>();
-            //foreach (IFCData data in FilerReplaceData(allIFCRow))
-            foreach(IFCData data in allIFCRow)
+            foreach (IFCData data in FilerReplaceData(allIFCRow))
+            //foreach (IFCData data in allIFCRow) //無Replace
             {
-                try
-                {
-                    BsonDocument obj = new BsonDocument
+                //try
+                //{
+                BsonDocument obj = new BsonDocument
                     {
                         { "P21Id", data.P21Id },
                         { "EntityName", data.EntityName }
                     };
-                    //Get Schema
-                    List<string> schemaList = SchemaReader.GetAttributesList(data.EntityName);
-                    //處理IFC原始字串編碼轉換, 並排除字串中有逗號的錯誤
-                    List<string> contentSplit = SplitProperty(CutStringWithComma(ConvertUnicodeStringToChinese(data.Properties)));
+                //Get Schema
+                List<string> schemaList = SchemaReader.GetAttributesList(data.EntityName);
+                //處理IFC原始字串編碼轉換, 並排除字串中有逗號的錯誤
+                List<string> contentSplit = SplitProperty(CutStringWithComma(ConvertUnicodeStringToChinese(data.Properties)));
 
-                    for (int i = 0; i < contentSplit.Count; i++)
-                    {
-                        if (contentSplit[i] == "") //空字串
-                        {
-                            obj.Add(schemaList[i], "");
-                            continue;
-                        }
-                        if (contentSplit[i].Substring(0, 1) != "(") //非陣列可直接儲存
-                        {
-                            obj.Add(schemaList[i], contentSplit[i]);
-                            continue;
-                        }
-                        BsonArray arr = new BsonArray();
-                        foreach (string val in SplitProperty(CutStringWithComma(cutString(contentSplit[i]))))
-                            arr.Add(val);
-                        obj.Add(schemaList[i], arr);
-                    }
-                    objDist.Add(data.P21Id, new IFCObject(obj));
-                }
-                catch (Exception exp)
+                for (int i = 0; i < contentSplit.Count; i++)
                 {
-                    ResultMessage += $"Has Error: {exp.Message}";
+                    if (contentSplit[i] == "") //空字串
+                    {
+                        obj.Add(schemaList[i], "");
+                        continue;
+                    }
+                    if (contentSplit[i].Substring(0, 1) != "(") //非陣列可直接儲存
+                    {
+                        obj.Add(schemaList[i], GetValue(contentSplit[i]));
+                        continue;
+                    }
+                    BsonArray arr1 = GetArray(contentSplit[i]);
+                    obj.Add(schemaList[i], GetArray(contentSplit[i]));
                 }
+                objDist.Add(data.P21Id, new IFCObject(obj));
+                //}
+                //catch (Exception exp)
+                //{
+                //    ResultMessage += $"Has Error: {exp.Message}";
+                //}
             }
             return objDist;
+        }
+        private BsonValue GetValue(string data)
+        {
+            if (data.Contains(".") && double.TryParse(data, out double numberData)) //雙精浮點數
+                return new BsonValue(numberData);
+            if (Int64.TryParse(data, out Int64 intData)) //整數
+                return new BsonValue(intData);
+
+            Regex stringPattern = new Regex(@"^'[\S\s]*'$"); //字串形式
+            if (stringPattern.IsMatch(data)) //字串 
+                return new BsonValue(CutString(data));
+            else
+                return new BsonValue(data); //ENUM
         }
         private void FindInverseData(Dictionary<string, IFCObject> dist)
         {
@@ -186,7 +187,15 @@ namespace IFCLite.IO
                     if (prop.Type == BsonType.String)
                         value = prop.AsString;
                     if (prop.Type == BsonType.Array && (prop as BsonArray).Count != 0)
-                        value = (prop as BsonArray).First().AsString;
+                    {
+                        BsonValue propData = (prop as BsonArray).First();
+                        while (propData.Type == BsonType.Array)
+                            propData = (propData as BsonArray).First();
+                        if (propData.Type != BsonType.String)
+                            continue;
+                        else
+                            value = propData.AsString;
+                    }
 
                     if (!value.Contains("#")) //不含#代表沒有上下層關係則不處理
                         continue;
@@ -279,6 +288,7 @@ namespace IFCLite.IO
             List<string> res = new List<string>();
             string tmpString = "";                                  //用來"接"字串
             int indexOfSchema = 0;                                  //用來對應aIFCRowData裡面的index, 跳過第一個type
+            string arrayEndString = "";
             bool isArrayValue = false;
             bool isStringValue = false;
             try
@@ -291,10 +301,20 @@ namespace IFCLite.IO
                     else
                         tmpString += cutS;
                     if (cutS[0] == '(')
-                    {                                                        //ifc的值是陣列                
-                        if (cutS[cutS.Length - 1] == ')')                     //結尾就是')'
+                    {                                                        //ifc的值是陣列  
+                        if (!isArrayValue) //第一次碰到陣列才須要讀結束的符號
+                            for (int i = 0; i < cutS.Length; i++)
+                            {
+                                if (cutS[i] == '(')
+                                    arrayEndString += ")"; //對應的陣列符號
+                                else
+                                    break;
+                            }
+
+                        if (cutS.LastIndexOf(arrayEndString) != -1)    //該陣列找的到結尾陣列符號
                         {
                             res.Add(tmpString.Trim());
+                            arrayEndString = "";
                             tmpString = "";
                             indexOfSchema++;
                         }
@@ -303,17 +323,18 @@ namespace IFCLite.IO
                     }
                     else if (cutS[0] == '\'')
                     {
-                        if (isArrayValue && cutS[cutS.Length - 1] == ')')
+                        if (isArrayValue && cutS.LastIndexOf(arrayEndString) != -1)
                         {
                             res.Add(tmpString.Trim());
                             tmpString = "";
                             indexOfSchema++;
                             isArrayValue = false;
+                            arrayEndString = "";
                             continue;
                         }
                         if (cutS[cutS.Length - 1] == '\'')                     //結尾就是'\''
                         {
-                            res.Add(cutString(tmpString)); //去掉前面與後面的字串示意符"'"
+                            res.Add(tmpString);
                             tmpString = "";
                             indexOfSchema++;
                         }
@@ -324,11 +345,12 @@ namespace IFCLite.IO
                     {
                         if (isArrayValue && !isStringValue)
                         {
-                            if (cutS[cutS.Length - 1] == ')')                //陣列結尾         else 僅連結陣列字串(開頭就做了)
+                            if (cutS.LastIndexOf(arrayEndString) != -1)                //陣列結尾         else 僅連結陣列字串(開頭就做了)
                             {
                                 isArrayValue = false;
                                 res.Add(tmpString.Trim());
                                 tmpString = "";
+                                arrayEndString = "";
                                 indexOfSchema++;
                             }
                         }
@@ -340,7 +362,7 @@ namespace IFCLite.IO
                                     if (cutS[cutS.Length - 2] == '\\')        //s的長度如果小於2會出現runtime error
                                         continue;
                                 isStringValue = false;
-                                res.Add(cutString(tmpString)); //去掉前面與後面的字串示意符"'"
+                                res.Add(tmpString);
                                 tmpString = "";
                                 indexOfSchema++;
                             }
@@ -360,14 +382,30 @@ namespace IFCLite.IO
             }
             return res;
         }
-        private List<string> SplitProperty(string val)
-        {
-            return SplitProperty(new List<string>() { val });
-        }
-        private string cutString(string tmp)
+        private string CutString(string tmp)
         {
             string res = tmp.Trim().Substring(1);
             return res.Substring(0, res.Length - 1);
+        }
+        private BsonArray GetArray(string data)
+        {
+            BsonArray arr = new BsonArray();
+            List<string> cutData = SplitProperty(CutStringWithComma(CutString(data)));
+            foreach (string val in cutData)
+            {
+                if (val == "") //空字串{
+                {
+                    arr.Add("");
+                    continue;
+                }
+                if (val.Substring(0, 1) != "(") //非陣列可直接儲存
+                {
+                    arr.Add(GetValue(val));
+                    continue;
+                }
+                arr.Add(GetArray(val)); //遇到陣列須再執行一次
+            }
+            return arr;
         }
         #region --unicode--
         private string ConvertUnicodeStringToChinese(string _String)

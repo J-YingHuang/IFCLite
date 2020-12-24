@@ -42,26 +42,21 @@ namespace IFCLite.Data
         }
         protected string GetIFCValueString(string value)
         {
-            if (value == "$")
+            if (value == "$" || value == "*")
                 return value;
             Regex p21idPattern = new Regex(@"^#[0-9]*[0-9]$");
             if (p21idPattern.IsMatch(value))
-                return value;
-            Regex numberPattern = new Regex(@"^[-]*[0-9]*.[0-9]*$");
-            if (numberPattern.IsMatch(value))
-                return value;
-            Regex earthNumberPattern = new Regex(@"^[-]*[0-9]*.[0-9]*E[+-]*[0-9]*[0-9]$");
-            if (earthNumberPattern.IsMatch(value))
                 return value;
             Regex enumPattern = new Regex(@"^.[\S]*[.]$");
             if (enumPattern.IsMatch(value))
                 return value;
             Regex ifcObjPattern = new Regex(@"^IFC[A-Z]*\([\S\s]*\)$");
             if (ifcObjPattern.IsMatch(value))
-                return value;
+                return ConvertToIFCString(value);
             if (value == "")
                 return "''";
-            return (value[0] == '\'' && value[value.Length - 1] == '\'') ? ConvertToIFCString(value) : $"'{ConvertToIFCString(value)}'";
+            return $"'{ConvertToIFCString(value)}'";
+            //return (value[0] == '\'' && value[value.Length - 1] == '\'') ? ConvertToIFCString(value) : $"'{ConvertToIFCString(value)}'";
         }
         protected bool IsChinese(string _String)
         {
@@ -75,7 +70,10 @@ namespace IFCLite.Data
             foreach (char v in _Code)
             {
                 byte[] bytes = Encoding.Unicode.GetBytes(v.ToString());
-                unicode += string.Format("{0:X}", bytes[1]) + string.Format("{0:X}", bytes[0]);
+                string first = string.Format("{0:X}", bytes[1]);
+                string second = string.Format("{0:X}", bytes[0]);
+                if (first.Length == 1) unicode += $"0{first}"; else unicode += first;
+                if (second.Length == 1) unicode += $"0{second}"; else unicode += second;
             }
 
             return unicode;
@@ -107,6 +105,13 @@ namespace IFCLite.Data
         }
         protected string ValueToIFC(BsonValue value)
         {
+            if (value.Type == BsonType.Int64)
+                return value.AsInt64.ToString();
+            if (value.Type == BsonType.Double)
+            {
+                string doubleStr = value.AsDouble.ToString();
+                return (doubleStr.Contains(".")) ? value.AsDouble.ToString() : doubleStr + ".";
+            }
             if (value.Type == BsonType.String)
                 return GetIFCValueString(value.AsString);
             BsonArray array = value as BsonArray;
@@ -114,9 +119,9 @@ namespace IFCLite.Data
                 return "()";
 
             //內容至少有一個的陣列
-            string res = $"({GetIFCValueString(array[0].AsString)}";
+            string res = $"({ValueToIFC(array[0])}";
             for (int i = 1; i < array.Count; i++)
-                res += $",{GetIFCValueString(array[i].AsString)}";
+                res += $",{ValueToIFC(array[i])}";
             res += ")";
             return res;
         }

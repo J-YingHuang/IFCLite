@@ -54,7 +54,7 @@ namespace IFCLite.IO
             IFCHeader des = new IFCHeader(db.IFCHead.FindOne(x => x["EntityName"] == "FILE_DESCRIPTION"));
             IFCHeader name = new IFCHeader(db.IFCHead.FindOne(x => x["EntityName"] == "FILE_NAME"));
             IFCHeader schema = new IFCHeader(db.IFCHead.FindOne(x => x["EntityName"] == "FILE_SCHEMA"));
-            return res + des.ToIFCString() + space + name.ToIFCString() + space + schema + space + "ENDSEC;" + space;
+            return res + des.ToIFCString() + space + name.ToIFCString() + space + schema.ToIFCString() + space + "ENDSEC;" + space;
         }
         public List<string> GetData(IFCDatabase db)
         {
@@ -65,14 +65,14 @@ namespace IFCLite.IO
             foreach(var pair in ReplaceTable)
             {
                 string data = objDict[pair.Key];
-                data = data.Substring(data.IndexOf('=') + 1, data.IndexOf(';') - data.IndexOf('=') - 1);
+                data = data.Substring(data.IndexOf('=') + 1, data.IndexOf(';') - data.IndexOf('=') );
                 foreach (string replaceId in pair.Value)
                     objDict.Add(replaceId, $"{replaceId}={data}");
             }
 
             Dictionary<int, string> sortData = objDict.ToDictionary(o => int.Parse(o.Key.Replace("#", "")), p => p.Value);
             sortData = sortData.OrderBy(o => o.Key).ToDictionary(o => o.Key, p => p.Value);
-            List<string> res = new List<string>() { $"Data;" };
+            List<string> res = new List<string>() { $"DATA;" };
             foreach (string data in sortData.Values)
                 res.Add($"{data}");
             res.Add("ENDSEC;");

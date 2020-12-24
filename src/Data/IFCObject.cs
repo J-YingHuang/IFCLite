@@ -46,10 +46,6 @@ namespace IFCLite.Data
         }
         public override string ToIFCString()
         {
-            if(P21Id == "#80")
-            {
-
-            }
             string res = $"{P21Id}={EntityName}(";
             List<BsonValue> values = GetValues();
             res += $"{ValueToIFC(values[0])}";
@@ -59,5 +55,6 @@ namespace IFCLite.Data
             res += ");";
             return res;
         }
+
     }
 }
