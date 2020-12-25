@@ -5,3 +5,8 @@
 * IFC Input Module
 * IFC Output Module
 * IFC CRUD Module
+
+## Getting Start
+* 下載Release.rar
+* 解壓縮並將IFCLite.dll參考至C#專案中
+* 開始使用(套件詳細說明可參考Help.rar)
