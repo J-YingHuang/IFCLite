@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="eab20e96-02b3-4305-a4da-b7c9ddd54992" Title="IFCLite" Url="html/N_IFCLite.htm">
+    <HelpTOCNode Id="36641b17-e011-40b9-bc8a-6741fb8e5c18" Title="IFCLiteDrive Class" Url="html/T_IFCLite_IFCLiteDrive.htm">
+      <HelpTOCNode Id="22974344-6fbb-4576-8d4a-b7043bb021b5" Title="IFCLiteDrive Constructor " Url="html/Overload_IFCLite_IFCLiteDrive__ctor.htm">
+        <HelpTOCNode Title="IFCLiteDrive Constructor (String, IFCVersion, Boolean)" Url="html/M_IFCLite_IFCLiteDrive__ctor.htm" />
+        <HelpTOCNode Title="IFCLiteDrive Constructor (String, String, IFCVersion, Boolean)" Url="html/M_IFCLite_IFCLiteDrive__ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="069e9184-46b5-4153-b115-f113671b4e5c" Title="IFCLiteDrive Properties" Url="html/Properties_T_IFCLite_IFCLiteDrive.htm">
+        <HelpTOCNode Title="Insert Property " Url="html/P_IFCLite_IFCLiteDrive_Insert.htm" />
+        <HelpTOCNode Title="Query Property " Url="html/P_IFCLite_IFCLiteDrive_Query.htm" />
+        <HelpTOCNode Title="Remove Property " Url="html/P_IFCLite_IFCLiteDrive_Remove.htm" />
+        <HelpTOCNode Title="Update Property " Url="html/P_IFCLite_IFCLiteDrive_Update.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e0558c33-0cf1-4b71-8427-77ed154f2234" Title="IFCLiteDrive Methods" Url="html/Methods_T_IFCLite_IFCLiteDrive.htm">
+        <HelpTOCNode Title="Close Method " Url="html/M_IFCLite_IFCLiteDrive_Close.htm" />
+        <HelpTOCNode Title="Export Method " Url="html/M_IFCLite_IFCLiteDrive_Export.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="f6c1e927-9231-43dd-ab1e-229aaa9ec351" Title="IFCLite.Access" Url="html/N_IFCLite_Access.htm">
+    <HelpTOCNode Id="0f4cefe0-4d2e-4370-9c24-178c854905e2" Title="IFCDelete Class" Url="html/T_IFCLite_Access_IFCDelete.htm">
+      <HelpTOCNode Title="IFCDelete Constructor " Url="html/M_IFCLite_Access_IFCDelete__ctor.htm" />
+      <HelpTOCNode Id="b573b436-5042-49bf-98c2-ab03798e10e3" Title="IFCDelete Methods" Url="html/Methods_T_IFCLite_Access_IFCDelete.htm">
+        <HelpTOCNode Id="e44a20c0-32a4-410d-9327-d260de6163c3" Title="ByObject Method " Url="html/Overload_IFCLite_Access_IFCDelete_ByObject.htm">
+          <HelpTOCNode Title="ByObject Method (IFCObject)" Url="html/M_IFCLite_Access_IFCDelete_ByObject.htm" />
+          <HelpTOCNode Title="ByObject Method (List(IFCObject))" Url="html/M_IFCLite_Access_IFCDelete_ByObject_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ByP21Id Method " Url="html/M_IFCLite_Access_IFCDelete_ByP21Id.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1caaab82-9aaf-4a08-91d6-73eb69aef4ce" Title="IFCInsert Class" Url="html/T_IFCLite_Access_IFCInsert.htm">
+      <HelpTOCNode Title="IFCInsert Constructor " Url="html/M_IFCLite_Access_IFCInsert__ctor.htm" />
+      <HelpTOCNode Id="3462cff9-4389-464b-8bde-d901ca4748dc" Title="IFCInsert Methods" Url="html/Methods_T_IFCLite_Access_IFCInsert.htm">
+        <HelpTOCNode Id="0ef0311e-d1eb-48d0-adfe-ccadff87bbba" Title="IFCObject Method " Url="html/Overload_IFCLite_Access_IFCInsert_IFCObject.htm">
+          <HelpTOCNode Title="IFCObject Method (IFCObject)" Url="html/M_IFCLite_Access_IFCInsert_IFCObject.htm" />
+          <HelpTOCNode Title="IFCObject Method (List(IFCObject))" Url="html/M_IFCLite_Access_IFCInsert_IFCObject_1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2dcee427-fd3c-451e-b510-51a60a218f58" Title="IFCQuery Class" Url="html/T_IFCLite_Access_IFCQuery.htm">
+      <HelpTOCNode Title="IFCQuery Constructor " Url="html/M_IFCLite_Access_IFCQuery__ctor.htm" />
+      <HelpTOCNode Id="4ec79398-7702-4a53-9e93-3bb6239675cf" Title="IFCQuery Methods" Url="html/Methods_T_IFCLite_Access_IFCQuery.htm">
+        <HelpTOCNode Title="ByEntityName Method " Url="html/M_IFCLite_Access_IFCQuery_ByEntityName.htm" />
+        <HelpTOCNode Title="ByGlobalId Method " Url="html/M_IFCLite_Access_IFCQuery_ByGlobalId.htm" />
+        <HelpTOCNode Title="ByP21Id Method " Url="html/M_IFCLite_Access_IFCQuery_ByP21Id.htm" />
+        <HelpTOCNode Title="GetFileDescription Method " Url="html/M_IFCLite_Access_IFCQuery_GetFileDescription.htm" />
+        <HelpTOCNode Title="GetFileName Method " Url="html/M_IFCLite_Access_IFCQuery_GetFileName.htm" />
+        <HelpTOCNode Title="GetFileSchema Method " Url="html/M_IFCLite_Access_IFCQuery_GetFileSchema.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="120d2b2d-2cd0-42b5-96fa-23e1d6f5d145" Title="IFCUpdate Class" Url="html/T_IFCLite_Access_IFCUpdate.htm">
+      <HelpTOCNode Title="IFCUpdate Constructor " Url="html/M_IFCLite_Access_IFCUpdate__ctor.htm" />
+      <HelpTOCNode Id="91d9cac6-b7ab-402a-8eee-1b4e5e167267" Title="IFCUpdate Methods" Url="html/Methods_T_IFCLite_Access_IFCUpdate.htm">
+        <HelpTOCNode Title="FileDescription Method " Url="html/M_IFCLite_Access_IFCUpdate_FileDescription.htm" />
+        <HelpTOCNode Title="FileName Method " Url="html/M_IFCLite_Access_IFCUpdate_FileName.htm" />
+        <HelpTOCNode Title="Object Method " Url="html/M_IFCLite_Access_IFCUpdate_Object.htm" />
+        <HelpTOCNode Title="Objects Method " Url="html/M_IFCLite_Access_IFCUpdate_Objects.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="16a6d5e1-bf05-463c-b0f1-f590e0b7fe45" Title="IFCLite.Data" Url="html/N_IFCLite_Data.htm">
+    <HelpTOCNode Id="71f57803-14cb-4134-ba6c-0c0c5a072acb" Title="IFCBase Class" Url="html/T_IFCLite_Data_IFCBase.htm">
+      <HelpTOCNode Title="IFCBase Constructor " Url="html/M_IFCLite_Data_IFCBase__ctor.htm" />
+      <HelpTOCNode Id="8880070d-05e0-4ac1-a7f3-77e76afe5f20" Title="IFCBase Properties" Url="html/Properties_T_IFCLite_Data_IFCBase.htm">
+        <HelpTOCNode Title="Data Property " Url="html/P_IFCLite_Data_IFCBase_Data.htm" />
+        <HelpTOCNode Title="EntityName Property " Url="html/P_IFCLite_Data_IFCBase_EntityName.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="98990fe7-e5d8-46c4-8ff9-7caba45a5c64" Title="IFCBase Methods" Url="html/Methods_T_IFCLite_Data_IFCBase.htm">
+        <HelpTOCNode Title="ConvertToIFCString Method " Url="html/M_IFCLite_Data_IFCBase_ConvertToIFCString.htm" />
+        <HelpTOCNode Title="GetIFCValueString Method " Url="html/M_IFCLite_Data_IFCBase_GetIFCValueString.htm" />
+        <HelpTOCNode Title="GetValues Method " Url="html/M_IFCLite_Data_IFCBase_GetValues.htm" />
+        <HelpTOCNode Title="IsChinese Method " Url="html/M_IFCLite_Data_IFCBase_IsChinese.htm" />
+        <HelpTOCNode Title="ToBson Method " Url="html/M_IFCLite_Data_IFCBase_ToBson.htm" />
+        <HelpTOCNode Title="ToIFCString Method " Url="html/M_IFCLite_Data_IFCBase_ToIFCString.htm" />
+        <HelpTOCNode Title="ToUnicode Method " Url="html/M_IFCLite_Data_IFCBase_ToUnicode.htm" />
+        <HelpTOCNode Title="ValueToIFC Method " Url="html/M_IFCLite_Data_IFCBase_ValueToIFC.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="35c53058-0538-4797-97a7-ea68cea18d9b" Title="IFCDatabase Class" Url="html/T_IFCLite_Data_IFCDatabase.htm">
+      <HelpTOCNode Title="IFCDatabase Constructor " Url="html/M_IFCLite_Data_IFCDatabase__ctor.htm" />
+      <HelpTOCNode Id="9adaf11b-301d-420b-b6bd-1cb88cb49405" Title="IFCDatabase Properties" Url="html/Properties_T_IFCLite_Data_IFCDatabase.htm">
+        <HelpTOCNode Title="IFCHead Property " Url="html/P_IFCLite_Data_IFCDatabase_IFCHead.htm" />
+        <HelpTOCNode Title="IFCModel Property " Url="html/P_IFCLite_Data_IFCDatabase_IFCModel.htm" />
+        <HelpTOCNode Title="InverseTable Property " Url="html/P_IFCLite_Data_IFCDatabase_InverseTable.htm" />
+        <HelpTOCNode Title="Path Property " Url="html/P_IFCLite_Data_IFCDatabase_Path.htm" />
+        <HelpTOCNode Title="ReplaceTable Property " Url="html/P_IFCLite_Data_IFCDatabase_ReplaceTable.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ab7348c7-d2c5-4def-9d0f-d9a762bd73f2" Title="IFCDatabase Methods" Url="html/Methods_T_IFCLite_Data_IFCDatabase.htm">
+        <HelpTOCNode Title="Close Method " Url="html/M_IFCLite_Data_IFCDatabase_Close.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1c97cdaa-b4da-473a-ae64-0309066fb6a0" Title="IFCHeader Class" Url="html/T_IFCLite_Data_IFCHeader.htm">
+      <HelpTOCNode Title="IFCHeader Constructor " Url="html/M_IFCLite_Data_IFCHeader__ctor.htm" />
+      <HelpTOCNode Title="IFCHeader Properties" Url="html/Properties_T_IFCLite_Data_IFCHeader.htm" />
+      <HelpTOCNode Id="c2c555e6-790e-4ad4-a73e-6ceb985a6651" Title="IFCHeader Methods" Url="html/Methods_T_IFCLite_Data_IFCHeader.htm">
+        <HelpTOCNode Title="ToIFCString Method " Url="html/M_IFCLite_Data_IFCHeader_ToIFCString.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b3c26074-366c-4bc5-aebe-7de964e834e7" Title="IFCInverseRecord Class" Url="html/T_IFCLite_Data_IFCInverseRecord.htm">
+      <HelpTOCNode Id="8efec71a-dc96-452a-8201-e914283bc346" Title="IFCInverseRecord Constructor " Url="html/Overload_IFCLite_Data_IFCInverseRecord__ctor.htm">
+        <HelpTOCNode Title="IFCInverseRecord Constructor (String)" Url="html/M_IFCLite_Data_IFCInverseRecord__ctor.htm" />
+        <HelpTOCNode Title="IFCInverseRecord Constructor (String, List(String))" Url="html/M_IFCLite_Data_IFCInverseRecord__ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="384b502e-ac43-4503-b7a7-177ca89e547c" Title="IFCInverseRecord Properties" Url="html/Properties_T_IFCLite_Data_IFCInverseRecord.htm">
+        <HelpTOCNode Title="ValueElement Property " Url="html/P_IFCLite_Data_IFCInverseRecord_ValueElement.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="IFCInverseRecord Methods" Url="html/Methods_T_IFCLite_Data_IFCInverseRecord.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="7d31b9fc-5407-41b6-8593-074c08575409" Title="IFCObject Class" Url="html/T_IFCLite_Data_IFCObject.htm">
+      <HelpTOCNode Title="IFCObject Constructor " Url="html/M_IFCLite_Data_IFCObject__ctor.htm" />
+      <HelpTOCNode Id="273a2b29-3531-4d71-9879-3e7097bab5cf" Title="IFCObject Properties" Url="html/Properties_T_IFCLite_Data_IFCObject.htm">
+        <HelpTOCNode Title="P21Id Property " Url="html/P_IFCLite_Data_IFCObject_P21Id.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="32dae7f2-b4e5-49e0-9078-5d8adde3267b" Title="IFCObject Methods" Url="html/Methods_T_IFCLite_Data_IFCObject.htm">
+        <HelpTOCNode Title="Get Method " Url="html/M_IFCLite_Data_IFCObject_Get.htm" />
+        <HelpTOCNode Title="GetFields Method " Url="html/M_IFCLite_Data_IFCObject_GetFields.htm" />
+        <HelpTOCNode Title="Set Method " Url="html/M_IFCLite_Data_IFCObject_Set.htm" />
+        <HelpTOCNode Title="ToIFCString Method " Url="html/M_IFCLite_Data_IFCObject_ToIFCString.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="dcad45c5-6fe5-4fb3-99c0-f0512f73cea8" Title="IFCReplaceRecord Class" Url="html/T_IFCLite_Data_IFCReplaceRecord.htm">
+      <HelpTOCNode Id="52b3e7bb-839b-46b4-8ceb-9727a1251d15" Title="IFCReplaceRecord Constructor " Url="html/Overload_IFCLite_Data_IFCReplaceRecord__ctor.htm">
+        <HelpTOCNode Title="IFCReplaceRecord Constructor (String)" Url="html/M_IFCLite_Data_IFCReplaceRecord__ctor.htm" />
+        <HelpTOCNode Title="IFCReplaceRecord Constructor (String, String)" Url="html/M_IFCLite_Data_IFCReplaceRecord__ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3b50596b-979e-4a43-bdcb-7eb99652b882" Title="IFCReplaceRecord Properties" Url="html/Properties_T_IFCLite_Data_IFCReplaceRecord.htm">
+        <HelpTOCNode Title="ValueElement Property " Url="html/P_IFCLite_Data_IFCReplaceRecord_ValueElement.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="IFCReplaceRecord Methods" Url="html/Methods_T_IFCLite_Data_IFCReplaceRecord.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="9dfa7bc9-4bbf-47d2-b5db-ab624dff3f70" Title="IFCSystemRecord Class" Url="html/T_IFCLite_Data_IFCSystemRecord.htm">
+      <HelpTOCNode Title="IFCSystemRecord Constructor " Url="html/M_IFCLite_Data_IFCSystemRecord__ctor.htm" />
+      <HelpTOCNode Id="747476a4-b7fc-4aee-9ff5-b4843d1e6fca" Title="IFCSystemRecord Properties" Url="html/Properties_T_IFCLite_Data_IFCSystemRecord.htm">
+        <HelpTOCNode Title="KeyElement Property " Url="html/P_IFCLite_Data_IFCSystemRecord_KeyElement.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="IFCSystemRecord Methods" Url="html/Methods_T_IFCLite_Data_IFCSystemRecord.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="4a1d42f1-ed24-4a72-8d89-585e4d712870" Title="IFCLite.Data.Schema" Url="html/N_IFCLite_Data_Schema.htm">
+    <HelpTOCNode Title="IFCVersion Enumeration" Url="html/T_IFCLite_Data_Schema_IFCVersion.htm" />
+    <HelpTOCNode Id="6249b0ef-c1c2-4a76-aa50-ccd9d0324265" Title="SchemaReader Class" Url="html/T_IFCLite_Data_Schema_SchemaReader.htm">
+      <HelpTOCNode Title="SchemaReader Constructor " Url="html/M_IFCLite_Data_Schema_SchemaReader__ctor.htm" />
+      <HelpTOCNode Id="1f96b304-1a8e-4c33-bbad-18b3208ee12e" Title="SchemaReader Methods" Url="html/Methods_T_IFCLite_Data_Schema_SchemaReader.htm">
+        <HelpTOCNode Title="GetAttributesList Method " Url="html/M_IFCLite_Data_Schema_SchemaReader_GetAttributesList.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="2ab1d4ad-a9ae-4a8c-9067-aabf7a9cdedc" Title="IFCLite.IO" Url="html/N_IFCLite_IO.htm">
+    <HelpTOCNode Id="01ad4b21-5579-4fb8-a14b-39009bc8436e" Title="IFCExport Class" Url="html/T_IFCLite_IO_IFCExport.htm">
+      <HelpTOCNode Title="IFCExport Constructor " Url="html/M_IFCLite_IO_IFCExport__ctor.htm" />
+      <HelpTOCNode Id="e7cb4c5a-f440-4b30-94da-d17a154deaba" Title="IFCExport Methods" Url="html/Methods_T_IFCLite_IO_IFCExport.htm">
+        <HelpTOCNode Title="GetData Method " Url="html/M_IFCLite_IO_IFCExport_GetData.htm" />
+        <HelpTOCNode Title="GetHeaderData Method " Url="html/M_IFCLite_IO_IFCExport_GetHeaderData.htm" />
+        <HelpTOCNode Title="GetIFCFileString Method " Url="html/M_IFCLite_IO_IFCExport_GetIFCFileString.htm" />
+        <HelpTOCNode Title="GetReplaceData Method " Url="html/M_IFCLite_IO_IFCExport_GetReplaceData.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="beeb5446-9be2-45b5-85bb-a26df42cfc54" Title="IFCReader Class" Url="html/T_IFCLite_IO_IFCReader.htm">
+      <HelpTOCNode Title="IFCReader Constructor " Url="html/M_IFCLite_IO_IFCReader__ctor.htm" />
+      <HelpTOCNode Id="95ac1959-c942-42de-be83-d98912847217" Title="IFCReader Properties" Url="html/Properties_T_IFCLite_IO_IFCReader.htm">
+        <HelpTOCNode Title="Header Property " Url="html/P_IFCLite_IO_IFCReader_Header.htm" />
+        <HelpTOCNode Title="InsertObjs Property " Url="html/P_IFCLite_IO_IFCReader_InsertObjs.htm" />
+        <HelpTOCNode Title="InverseTable Property " Url="html/P_IFCLite_IO_IFCReader_InverseTable.htm" />
+        <HelpTOCNode Title="ReplaceTable Property " Url="html/P_IFCLite_IO_IFCReader_ReplaceTable.htm" />
+        <HelpTOCNode Title="ResultMessage Property " Url="html/P_IFCLite_IO_IFCReader_ResultMessage.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="IFCReader Methods" Url="html/Methods_T_IFCLite_IO_IFCReader.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

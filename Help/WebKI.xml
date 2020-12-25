@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="ByEntityName method" Url="html/M_IFCLite_Access_IFCQuery_ByEntityName.htm" />
+  <HelpKINode Title="ByGlobalId method" Url="html/M_IFCLite_Access_IFCQuery_ByGlobalId.htm" />
+  <HelpKINode Title="ByObject method" Url="html/Overload_IFCLite_Access_IFCDelete_ByObject.htm" />
+  <HelpKINode Title="ByP21Id method">
+    <HelpKINode Title="IFCDelete.ByP21Id Method " Url="html/M_IFCLite_Access_IFCDelete_ByP21Id.htm" />
+    <HelpKINode Title="IFCQuery.ByP21Id Method " Url="html/M_IFCLite_Access_IFCQuery_ByP21Id.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Close method">
+    <HelpKINode Title="IFCDatabase.Close Method " Url="html/M_IFCLite_Data_IFCDatabase_Close.htm" />
+    <HelpKINode Title="IFCLiteDrive.Close Method " Url="html/M_IFCLite_IFCLiteDrive_Close.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConvertToIFCString method" Url="html/M_IFCLite_Data_IFCBase_ConvertToIFCString.htm" />
+  <HelpKINode Title="Data property" Url="html/P_IFCLite_Data_IFCBase_Data.htm" />
+  <HelpKINode Title="EntityName property" Url="html/P_IFCLite_Data_IFCBase_EntityName.htm" />
+  <HelpKINode Title="Export method" Url="html/M_IFCLite_IFCLiteDrive_Export.htm" />
+  <HelpKINode Title="FileDescription method" Url="html/M_IFCLite_Access_IFCUpdate_FileDescription.htm" />
+  <HelpKINode Title="FileName method" Url="html/M_IFCLite_Access_IFCUpdate_FileName.htm" />
+  <HelpKINode Title="Get method" Url="html/M_IFCLite_Data_IFCObject_Get.htm" />
+  <HelpKINode Title="GetAttributesList method" Url="html/M_IFCLite_Data_Schema_SchemaReader_GetAttributesList.htm" />
+  <HelpKINode Title="GetData method" Url="html/M_IFCLite_IO_IFCExport_GetData.htm" />
+  <HelpKINode Title="GetFields method" Url="html/M_IFCLite_Data_IFCObject_GetFields.htm" />
+  <HelpKINode Title="GetFileDescription method" Url="html/M_IFCLite_Access_IFCQuery_GetFileDescription.htm" />
+  <HelpKINode Title="GetFileName method" Url="html/M_IFCLite_Access_IFCQuery_GetFileName.htm" />
+  <HelpKINode Title="GetFileSchema method" Url="html/M_IFCLite_Access_IFCQuery_GetFileSchema.htm" />
+  <HelpKINode Title="GetHeaderData method" Url="html/M_IFCLite_IO_IFCExport_GetHeaderData.htm" />
+  <HelpKINode Title="GetIFCFileString method" Url="html/M_IFCLite_IO_IFCExport_GetIFCFileString.htm" />
+  <HelpKINode Title="GetIFCValueString method" Url="html/M_IFCLite_Data_IFCBase_GetIFCValueString.htm" />
+  <HelpKINode Title="GetReplaceData method" Url="html/M_IFCLite_IO_IFCExport_GetReplaceData.htm" />
+  <HelpKINode Title="GetValues method" Url="html/M_IFCLite_Data_IFCBase_GetValues.htm" />
+  <HelpKINode Title="Header property" Url="html/P_IFCLite_IO_IFCReader_Header.htm" />
+  <HelpKINode Title="IFC4 enumeration member" Url="html/T_IFCLite_Data_Schema_IFCVersion.htm" />
+  <HelpKINode Title="IFCBase class">
+    <HelpKINode Title="IFCBase Class" Url="html/T_IFCLite_Data_IFCBase.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IFCLite_Data_IFCBase__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_Data_IFCBase.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IFCLite_Data_IFCBase.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCBase.ConvertToIFCString method" Url="html/M_IFCLite_Data_IFCBase_ConvertToIFCString.htm" />
+  <HelpKINode Title="IFCBase.Data property" Url="html/P_IFCLite_Data_IFCBase_Data.htm" />
+  <HelpKINode Title="IFCBase.EntityName property" Url="html/P_IFCLite_Data_IFCBase_EntityName.htm" />
+  <HelpKINode Title="IFCBase.GetIFCValueString method" Url="html/M_IFCLite_Data_IFCBase_GetIFCValueString.htm" />
+  <HelpKINode Title="IFCBase.GetValues method" Url="html/M_IFCLite_Data_IFCBase_GetValues.htm" />
+  <HelpKINode Title="IFCBase.IFCBase constructor" Url="html/M_IFCLite_Data_IFCBase__ctor.htm" />
+  <HelpKINode Title="IFCBase.IsChinese method" Url="html/M_IFCLite_Data_IFCBase_IsChinese.htm" />
+  <HelpKINode Title="IFCBase.ToBson method" Url="html/M_IFCLite_Data_IFCBase_ToBson.htm" />
+  <HelpKINode Title="IFCBase.ToIFCString method" Url="html/M_IFCLite_Data_IFCBase_ToIFCString.htm" />
+  <HelpKINode Title="IFCBase.ToUnicode method" Url="html/M_IFCLite_Data_IFCBase_ToUnicode.htm" />
+  <HelpKINode Title="IFCBase.ValueToIFC method" Url="html/M_IFCLite_Data_IFCBase_ValueToIFC.htm" />
+  <HelpKINode Title="IFCDatabase class">
+    <HelpKINode Title="IFCDatabase Class" Url="html/T_IFCLite_Data_IFCDatabase.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IFCLite_Data_IFCDatabase__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_Data_IFCDatabase.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IFCLite_Data_IFCDatabase.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCDatabase.Close method" Url="html/M_IFCLite_Data_IFCDatabase_Close.htm" />
+  <HelpKINode Title="IFCDatabase.IFCDatabase constructor" Url="html/M_IFCLite_Data_IFCDatabase__ctor.htm" />
+  <HelpKINode Title="IFCDatabase.IFCHead property" Url="html/P_IFCLite_Data_IFCDatabase_IFCHead.htm" />
+  <HelpKINode Title="IFCDatabase.IFCModel property" Url="html/P_IFCLite_Data_IFCDatabase_IFCModel.htm" />
+  <HelpKINode Title="IFCDatabase.InverseTable property" Url="html/P_IFCLite_Data_IFCDatabase_InverseTable.htm" />
+  <HelpKINode Title="IFCDatabase.Path property" Url="html/P_IFCLite_Data_IFCDatabase_Path.htm" />
+  <HelpKINode Title="IFCDatabase.ReplaceTable property" Url="html/P_IFCLite_Data_IFCDatabase_ReplaceTable.htm" />
+  <HelpKINode Title="IFCDelete class">
+    <HelpKINode Title="IFCDelete Class" Url="html/T_IFCLite_Access_IFCDelete.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IFCLite_Access_IFCDelete__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_Access_IFCDelete.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCDelete.ByObject method" Url="html/Overload_IFCLite_Access_IFCDelete_ByObject.htm" />
+  <HelpKINode Title="IFCDelete.ByP21Id method" Url="html/M_IFCLite_Access_IFCDelete_ByP21Id.htm" />
+  <HelpKINode Title="IFCDelete.IFCDelete constructor" Url="html/M_IFCLite_Access_IFCDelete__ctor.htm" />
+  <HelpKINode Title="IFCExport class">
+    <HelpKINode Title="IFCExport Class" Url="html/T_IFCLite_IO_IFCExport.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IFCLite_IO_IFCExport__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_IO_IFCExport.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCExport.GetData method" Url="html/M_IFCLite_IO_IFCExport_GetData.htm" />
+  <HelpKINode Title="IFCExport.GetHeaderData method" Url="html/M_IFCLite_IO_IFCExport_GetHeaderData.htm" />
+  <HelpKINode Title="IFCExport.GetIFCFileString method" Url="html/M_IFCLite_IO_IFCExport_GetIFCFileString.htm" />
+  <HelpKINode Title="IFCExport.GetReplaceData method" Url="html/M_IFCLite_IO_IFCExport_GetReplaceData.htm" />
+  <HelpKINode Title="IFCExport.IFCExport constructor" Url="html/M_IFCLite_IO_IFCExport__ctor.htm" />
+  <HelpKINode Title="IFCHead property" Url="html/P_IFCLite_Data_IFCDatabase_IFCHead.htm" />
+  <HelpKINode Title="IFCHeader class">
+    <HelpKINode Title="IFCHeader Class" Url="html/T_IFCLite_Data_IFCHeader.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IFCLite_Data_IFCHeader__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_Data_IFCHeader.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IFCLite_Data_IFCHeader.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCHeader.IFCHeader constructor" Url="html/M_IFCLite_Data_IFCHeader__ctor.htm" />
+  <HelpKINode Title="IFCHeader.ToIFCString method" Url="html/M_IFCLite_Data_IFCHeader_ToIFCString.htm" />
+  <HelpKINode Title="IFCInsert class">
+    <HelpKINode Title="IFCInsert Class" Url="html/T_IFCLite_Access_IFCInsert.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IFCLite_Access_IFCInsert__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_Access_IFCInsert.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCInsert.IFCInsert constructor" Url="html/M_IFCLite_Access_IFCInsert__ctor.htm" />
+  <HelpKINode Title="IFCInsert.IFCObject method" Url="html/Overload_IFCLite_Access_IFCInsert_IFCObject.htm" />
+  <HelpKINode Title="IFCInverseRecord class">
+    <HelpKINode Title="IFCInverseRecord Class" Url="html/T_IFCLite_Data_IFCInverseRecord.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_IFCLite_Data_IFCInverseRecord__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_Data_IFCInverseRecord.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IFCLite_Data_IFCInverseRecord.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCInverseRecord.IFCInverseRecord constructor" Url="html/Overload_IFCLite_Data_IFCInverseRecord__ctor.htm" />
+  <HelpKINode Title="IFCInverseRecord.ValueElement property" Url="html/P_IFCLite_Data_IFCInverseRecord_ValueElement.htm" />
+  <HelpKINode Title="IFCLite namespace" Url="html/N_IFCLite.htm" />
+  <HelpKINode Title="IFCLite.Access namespace" Url="html/N_IFCLite_Access.htm" />
+  <HelpKINode Title="IFCLite.Access.IFCDelete class" Url="html/T_IFCLite_Access_IFCDelete.htm" />
+  <HelpKINode Title="IFCLite.Access.IFCInsert class" Url="html/T_IFCLite_Access_IFCInsert.htm" />
+  <HelpKINode Title="IFCLite.Access.IFCQuery class" Url="html/T_IFCLite_Access_IFCQuery.htm" />
+  <HelpKINode Title="IFCLite.Access.IFCUpdate class" Url="html/T_IFCLite_Access_IFCUpdate.htm" />
+  <HelpKINode Title="IFCLite.Data namespace" Url="html/N_IFCLite_Data.htm" />
+  <HelpKINode Title="IFCLite.Data.IFCBase class" Url="html/T_IFCLite_Data_IFCBase.htm" />
+  <HelpKINode Title="IFCLite.Data.IFCDatabase class" Url="html/T_IFCLite_Data_IFCDatabase.htm" />
+  <HelpKINode Title="IFCLite.Data.IFCHeader class" Url="html/T_IFCLite_Data_IFCHeader.htm" />
+  <HelpKINode Title="IFCLite.Data.IFCInverseRecord class" Url="html/T_IFCLite_Data_IFCInverseRecord.htm" />
+  <HelpKINode Title="IFCLite.Data.IFCObject class" Url="html/T_IFCLite_Data_IFCObject.htm" />
+  <HelpKINode Title="IFCLite.Data.IFCReplaceRecord class" Url="html/T_IFCLite_Data_IFCReplaceRecord.htm" />
+  <HelpKINode Title="IFCLite.Data.IFCSystemRecord class" Url="html/T_IFCLite_Data_IFCSystemRecord.htm" />
+  <HelpKINode Title="IFCLite.Data.Schema namespace" Url="html/N_IFCLite_Data_Schema.htm" />
+  <HelpKINode Title="IFCLite.Data.Schema.IFCVersion enumeration" Url="html/T_IFCLite_Data_Schema_IFCVersion.htm" />
+  <HelpKINode Title="IFCLite.Data.Schema.SchemaReader class" Url="html/T_IFCLite_Data_Schema_SchemaReader.htm" />
+  <HelpKINode Title="IFCLite.IFCLiteDrive class" Url="html/T_IFCLite_IFCLiteDrive.htm" />
+  <HelpKINode Title="IFCLite.IO namespace" Url="html/N_IFCLite_IO.htm" />
+  <HelpKINode Title="IFCLite.IO.IFCExport class" Url="html/T_IFCLite_IO_IFCExport.htm" />
+  <HelpKINode Title="IFCLite.IO.IFCReader class" Url="html/T_IFCLite_IO_IFCReader.htm" />
+  <HelpKINode Title="IFCLiteDrive class">
+    <HelpKINode Title="IFCLiteDrive Class" Url="html/T_IFCLite_IFCLiteDrive.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_IFCLite_IFCLiteDrive__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_IFCLiteDrive.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IFCLite_IFCLiteDrive.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCLiteDrive.Close method" Url="html/M_IFCLite_IFCLiteDrive_Close.htm" />
+  <HelpKINode Title="IFCLiteDrive.Export method" Url="html/M_IFCLite_IFCLiteDrive_Export.htm" />
+  <HelpKINode Title="IFCLiteDrive.IFCLiteDrive constructor" Url="html/Overload_IFCLite_IFCLiteDrive__ctor.htm" />
+  <HelpKINode Title="IFCLiteDrive.Insert property" Url="html/P_IFCLite_IFCLiteDrive_Insert.htm" />
+  <HelpKINode Title="IFCLiteDrive.Query property" Url="html/P_IFCLite_IFCLiteDrive_Query.htm" />
+  <HelpKINode Title="IFCLiteDrive.Remove property" Url="html/P_IFCLite_IFCLiteDrive_Remove.htm" />
+  <HelpKINode Title="IFCLiteDrive.Update property" Url="html/P_IFCLite_IFCLiteDrive_Update.htm" />
+  <HelpKINode Title="IFCModel property" Url="html/P_IFCLite_Data_IFCDatabase_IFCModel.htm" />
+  <HelpKINode Title="IFCObject class">
+    <HelpKINode Title="IFCObject Class" Url="html/T_IFCLite_Data_IFCObject.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IFCLite_Data_IFCObject__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_Data_IFCObject.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IFCLite_Data_IFCObject.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCObject method" Url="html/Overload_IFCLite_Access_IFCInsert_IFCObject.htm" />
+  <HelpKINode Title="IFCObject.Get method" Url="html/M_IFCLite_Data_IFCObject_Get.htm" />
+  <HelpKINode Title="IFCObject.GetFields method" Url="html/M_IFCLite_Data_IFCObject_GetFields.htm" />
+  <HelpKINode Title="IFCObject.IFCObject constructor" Url="html/M_IFCLite_Data_IFCObject__ctor.htm" />
+  <HelpKINode Title="IFCObject.P21Id property" Url="html/P_IFCLite_Data_IFCObject_P21Id.htm" />
+  <HelpKINode Title="IFCObject.Set method" Url="html/M_IFCLite_Data_IFCObject_Set.htm" />
+  <HelpKINode Title="IFCObject.ToIFCString method" Url="html/M_IFCLite_Data_IFCObject_ToIFCString.htm" />
+  <HelpKINode Title="IFCQuery class">
+    <HelpKINode Title="IFCQuery Class" Url="html/T_IFCLite_Access_IFCQuery.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IFCLite_Access_IFCQuery__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_Access_IFCQuery.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCQuery.ByEntityName method" Url="html/M_IFCLite_Access_IFCQuery_ByEntityName.htm" />
+  <HelpKINode Title="IFCQuery.ByGlobalId method" Url="html/M_IFCLite_Access_IFCQuery_ByGlobalId.htm" />
+  <HelpKINode Title="IFCQuery.ByP21Id method" Url="html/M_IFCLite_Access_IFCQuery_ByP21Id.htm" />
+  <HelpKINode Title="IFCQuery.GetFileDescription method" Url="html/M_IFCLite_Access_IFCQuery_GetFileDescription.htm" />
+  <HelpKINode Title="IFCQuery.GetFileName method" Url="html/M_IFCLite_Access_IFCQuery_GetFileName.htm" />
+  <HelpKINode Title="IFCQuery.GetFileSchema method" Url="html/M_IFCLite_Access_IFCQuery_GetFileSchema.htm" />
+  <HelpKINode Title="IFCQuery.IFCQuery constructor" Url="html/M_IFCLite_Access_IFCQuery__ctor.htm" />
+  <HelpKINode Title="IFCReader class">
+    <HelpKINode Title="IFCReader Class" Url="html/T_IFCLite_IO_IFCReader.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IFCLite_IO_IFCReader__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_IO_IFCReader.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IFCLite_IO_IFCReader.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCReader.Header property" Url="html/P_IFCLite_IO_IFCReader_Header.htm" />
+  <HelpKINode Title="IFCReader.IFCReader constructor" Url="html/M_IFCLite_IO_IFCReader__ctor.htm" />
+  <HelpKINode Title="IFCReader.InsertObjs property" Url="html/P_IFCLite_IO_IFCReader_InsertObjs.htm" />
+  <HelpKINode Title="IFCReader.InverseTable property" Url="html/P_IFCLite_IO_IFCReader_InverseTable.htm" />
+  <HelpKINode Title="IFCReader.ReplaceTable property" Url="html/P_IFCLite_IO_IFCReader_ReplaceTable.htm" />
+  <HelpKINode Title="IFCReader.ResultMessage property" Url="html/P_IFCLite_IO_IFCReader_ResultMessage.htm" />
+  <HelpKINode Title="IFCReplaceRecord class">
+    <HelpKINode Title="IFCReplaceRecord Class" Url="html/T_IFCLite_Data_IFCReplaceRecord.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_IFCLite_Data_IFCReplaceRecord__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_Data_IFCReplaceRecord.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IFCLite_Data_IFCReplaceRecord.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCReplaceRecord.IFCReplaceRecord constructor" Url="html/Overload_IFCLite_Data_IFCReplaceRecord__ctor.htm" />
+  <HelpKINode Title="IFCReplaceRecord.ValueElement property" Url="html/P_IFCLite_Data_IFCReplaceRecord_ValueElement.htm" />
+  <HelpKINode Title="IFCSystemRecord class">
+    <HelpKINode Title="IFCSystemRecord Class" Url="html/T_IFCLite_Data_IFCSystemRecord.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IFCLite_Data_IFCSystemRecord__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_Data_IFCSystemRecord.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_IFCLite_Data_IFCSystemRecord.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCSystemRecord.IFCSystemRecord constructor" Url="html/M_IFCLite_Data_IFCSystemRecord__ctor.htm" />
+  <HelpKINode Title="IFCSystemRecord.KeyElement property" Url="html/P_IFCLite_Data_IFCSystemRecord_KeyElement.htm" />
+  <HelpKINode Title="IFCUpdate class">
+    <HelpKINode Title="IFCUpdate Class" Url="html/T_IFCLite_Access_IFCUpdate.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IFCLite_Access_IFCUpdate__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_Access_IFCUpdate.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IFCUpdate.FileDescription method" Url="html/M_IFCLite_Access_IFCUpdate_FileDescription.htm" />
+  <HelpKINode Title="IFCUpdate.FileName method" Url="html/M_IFCLite_Access_IFCUpdate_FileName.htm" />
+  <HelpKINode Title="IFCUpdate.IFCUpdate constructor" Url="html/M_IFCLite_Access_IFCUpdate__ctor.htm" />
+  <HelpKINode Title="IFCUpdate.Object method" Url="html/M_IFCLite_Access_IFCUpdate_Object.htm" />
+  <HelpKINode Title="IFCUpdate.Objects method" Url="html/M_IFCLite_Access_IFCUpdate_Objects.htm" />
+  <HelpKINode Title="IFCVersion enumeration" Url="html/T_IFCLite_Data_Schema_IFCVersion.htm" />
+  <HelpKINode Title="Insert property" Url="html/P_IFCLite_IFCLiteDrive_Insert.htm" />
+  <HelpKINode Title="InsertObjs property" Url="html/P_IFCLite_IO_IFCReader_InsertObjs.htm" />
+  <HelpKINode Title="InverseTable property">
+    <HelpKINode Title="IFCDatabase.InverseTable Property " Url="html/P_IFCLite_Data_IFCDatabase_InverseTable.htm" />
+    <HelpKINode Title="IFCReader.InverseTable Property " Url="html/P_IFCLite_IO_IFCReader_InverseTable.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IsChinese method" Url="html/M_IFCLite_Data_IFCBase_IsChinese.htm" />
+  <HelpKINode Title="KeyElement property" Url="html/P_IFCLite_Data_IFCSystemRecord_KeyElement.htm" />
+  <HelpKINode Title="Object method" Url="html/M_IFCLite_Access_IFCUpdate_Object.htm" />
+  <HelpKINode Title="Objects method" Url="html/M_IFCLite_Access_IFCUpdate_Objects.htm" />
+  <HelpKINode Title="P21Id property" Url="html/P_IFCLite_Data_IFCObject_P21Id.htm" />
+  <HelpKINode Title="Path property" Url="html/P_IFCLite_Data_IFCDatabase_Path.htm" />
+  <HelpKINode Title="Query property" Url="html/P_IFCLite_IFCLiteDrive_Query.htm" />
+  <HelpKINode Title="Remove property" Url="html/P_IFCLite_IFCLiteDrive_Remove.htm" />
+  <HelpKINode Title="ReplaceTable property">
+    <HelpKINode Title="IFCDatabase.ReplaceTable Property " Url="html/P_IFCLite_Data_IFCDatabase_ReplaceTable.htm" />
+    <HelpKINode Title="IFCReader.ReplaceTable Property " Url="html/P_IFCLite_IO_IFCReader_ReplaceTable.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ResultMessage property" Url="html/P_IFCLite_IO_IFCReader_ResultMessage.htm" />
+  <HelpKINode Title="SchemaReader class">
+    <HelpKINode Title="SchemaReader Class" Url="html/T_IFCLite_Data_Schema_SchemaReader.htm" />
+    <HelpKINode Title="constructor" Url="html/M_IFCLite_Data_Schema_SchemaReader__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_IFCLite_Data_Schema_SchemaReader.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SchemaReader.GetAttributesList method" Url="html/M_IFCLite_Data_Schema_SchemaReader_GetAttributesList.htm" />
+  <HelpKINode Title="SchemaReader.SchemaReader constructor" Url="html/M_IFCLite_Data_Schema_SchemaReader__ctor.htm" />
+  <HelpKINode Title="Set method" Url="html/M_IFCLite_Data_IFCObject_Set.htm" />
+  <HelpKINode Title="ToBson method" Url="html/M_IFCLite_Data_IFCBase_ToBson.htm" />
+  <HelpKINode Title="ToIFCString method">
+    <HelpKINode Title="IFCBase.ToIFCString Method " Url="html/M_IFCLite_Data_IFCBase_ToIFCString.htm" />
+    <HelpKINode Title="IFCHeader.ToIFCString Method " Url="html/M_IFCLite_Data_IFCHeader_ToIFCString.htm" />
+    <HelpKINode Title="IFCObject.ToIFCString Method " Url="html/M_IFCLite_Data_IFCObject_ToIFCString.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ToUnicode method" Url="html/M_IFCLite_Data_IFCBase_ToUnicode.htm" />
+  <HelpKINode Title="Update property" Url="html/P_IFCLite_IFCLiteDrive_Update.htm" />
+  <HelpKINode Title="ValueElement property">
+    <HelpKINode Title="IFCInverseRecord.ValueElement Property " Url="html/P_IFCLite_Data_IFCInverseRecord_ValueElement.htm" />
+    <HelpKINode Title="IFCReplaceRecord.ValueElement Property " Url="html/P_IFCLite_Data_IFCReplaceRecord_ValueElement.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ValueToIFC method" Url="html/M_IFCLite_Data_IFCBase_ValueToIFC.htm" />
+</HelpKI>
